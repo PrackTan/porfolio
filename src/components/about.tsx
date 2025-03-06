@@ -1,11 +1,16 @@
+"use client"
+
 import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
+import { useLanguage } from "@/lib/i18n/language-context"
 
 export default function About() {
+  const { t } = useLanguage()
+
   return (
     <section id="about" className="section bg-muted/25">
       <div className="container">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">About Me</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">{t("about.title")}</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="flex justify-center md:justify-end">
@@ -15,43 +20,36 @@ export default function About() {
           </div>
 
           <div className="space-y-6">
-            <p className="text-lg">
-              Hello! I'm a passionate full stack developer with 5 years of experience building web applications. I
-              specialize in JavaScript/TypeScript, React, Next.js, Node.js, and related technologies.
-            </p>
+            <p className="text-lg">{t("about.description1")}</p>
 
-            <p className="text-lg">
-              My journey in programming started when I built my first website at the age of 16. Since then, I've
-              developed numerous projects, collaborated with talented teams, and continuously learned new technologies
-              to stay at the forefront of web development.
-            </p>
+            <p className="text-lg">{t("about.description2")}</p>
 
             <div className="grid grid-cols-2 gap-4 pt-6">
               <Card>
                 <CardContent className="p-4">
+                  <h3 className="font-bold text-xl text-primary mb-1">1+</h3>
+                  <p className="text-muted-foreground">{t("about.yearsExperience")}</p>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardContent className="p-4">
+                  <h3 className="font-bold text-xl text-primary mb-1">10+</h3>
+                  <p className="text-muted-foreground">{t("about.projectsCompleted")}</p>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardContent className="p-4">
                   <h3 className="font-bold text-xl text-primary mb-1">5+</h3>
-                  <p className="text-muted-foreground">Years Experience</p>
+                  <p className="text-muted-foreground">{t("about.happyClients")}</p>
                 </CardContent>
               </Card>
 
               <Card>
                 <CardContent className="p-4">
-                  <h3 className="font-bold text-xl text-primary mb-1">50+</h3>
-                  <p className="text-muted-foreground">Projects Completed</p>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardContent className="p-4">
-                  <h3 className="font-bold text-xl text-primary mb-1">15+</h3>
-                  <p className="text-muted-foreground">Happy Clients</p>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardContent className="p-4">
-                  <h3 className="font-bold text-xl text-primary mb-1">3</h3>
-                  <p className="text-muted-foreground">Industry Awards</p>
+                  <h3 className="font-bold text-xl text-primary mb-1">2</h3>
+                  <p className="text-muted-foreground">Companies</p>
                 </CardContent>
               </Card>
             </div>

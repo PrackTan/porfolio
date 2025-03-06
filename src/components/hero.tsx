@@ -3,8 +3,11 @@
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { ArrowDownCircle } from "lucide-react"
+import { useLanguage } from "@/lib/i18n/language-context"
 
 export default function Hero() {
+  const { t } = useLanguage()
+
   return (
     <section
       id="hero"
@@ -13,20 +16,17 @@ export default function Hero() {
       <div className="container">
         <div className="flex flex-col items-start max-w-3xl space-y-6">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-            <span className="block">Hi, I'm</span>
-            <span className="block text-primary">Your Name</span>
+            <span className="block">{t("hero.greeting")}</span>
+            <span className="block text-primary">NGUYEN CHAU HUU TAN</span>
           </h1>
-          <h2 className="text-2xl md:text-3xl text-muted-foreground">Full Stack Developer</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl">
-            I build modern, responsive web applications using the latest technologies. Passionate about creating
-            beautiful and functional user experiences.
-          </p>
+          <h2 className="text-2xl md:text-3xl text-muted-foreground">{t("hero.role")}</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl">{t("hero.description")}</p>
           <div className="flex gap-4 pt-4">
             <Button size="lg" asChild>
-              <Link href="#projects">View My Work</Link>
+              <Link href="#projects">{t("hero.viewWork")}</Link>
             </Button>
             <Button size="lg" variant="outline" asChild>
-              <Link href="#contact">Contact Me</Link>
+              <Link href="#contact">{t("hero.contactMe")}</Link>
             </Button>
           </div>
           <div className="w-full flex justify-center pt-20">
